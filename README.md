@@ -26,16 +26,16 @@ Serverless es contar con poder de computo (servidores) como utilidad, lo cual me
 
 * Create Action
 
-![Create action](images_readme/3.png)
+![Create action](images_readme/3.PNG)
 
-# Acción N° 1
+# Acción N° 1 - SearchByText
 
 Para esta primera acción, implementaremos la funcionalidad de realizar un búsqueda por texto en todos los documentos ingestados.
 Primero, crearemos un paquete donde guardaremos todas nuestras acciones.
 
 *Package Name: serverless-codeDay (opcional)*
 
-![Create Package](images_readme/4.png)
+![Create Package](images_readme/4.PNG)
 
 Pondremos el nombre - searchByText
 
