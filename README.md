@@ -95,3 +95,17 @@ function main(params) {
   });
 }
 ```
+
+* Save
+
+![Save Action](images_readme/7.PNG)
+
+
+
+Ahora debemos agregar los parámetros que tenemos en nuestro código los cuales obtendremos del servicio Watson Discovery. Para esto:
+
+//OBTENER PARAMETROS DE DISCOVERY IMG
+
+Con los parámetros, volvemos a nuestra acción y accedemos a la sección parameters
+
+![Parameters](images_readme/7.PNG)
