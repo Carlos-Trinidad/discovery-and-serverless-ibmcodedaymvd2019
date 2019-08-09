@@ -108,4 +108,10 @@ Ahora debemos agregar los parámetros que tenemos en nuestro código los cuales 
 
 Con los parámetros, volvemos a nuestra acción y accedemos a la sección parameters
 
-![Parameters](images_readme/7.PNG)
+![Parameters](images_readme/8.PNG)
+
+
+Agregaremos los parámetros que se muestran a continuación sustituyendo el *Parameter Value* por los datos obtenidos del servicio discovery
+
+![Set parameters](images_readme/9.PNG)
+
