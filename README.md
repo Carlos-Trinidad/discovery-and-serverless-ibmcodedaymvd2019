@@ -13,36 +13,34 @@ Serverless es contar con poder de computo (servidores) como utilidad, lo cual me
 * Buscamos en el catálogo Functions
 
 ![IBM Cloud Functions](images_readme/1.png)
-
-
-
+<br />
+<br />
 
 * Damos click en Empezar a crear
 
 ![Empezar a crear](images_readme/2.png)
-
-
-
+<br />
+<br />
 
 * Create Action
-
+<br />
 ![Create action](images_readme/3.PNG)
-
+<br />
 # Acción N° 1 - SearchByText
 
 Para esta primera acción, implementaremos la funcionalidad de realizar un búsqueda por texto en todos los documentos ingestados.
 Primero, crearemos un paquete donde guardaremos todas nuestras acciones.
 
 *Package Name: serverless-codeDay (opcional)*
-
+<br />
 ![Create Package](images_readme/4.PNG)
 ![Colocamos el nombre](images_readme/5.png)
-
-
+<br />
+<br />
 Pondremos el nombre - searchByText
-
+<br />
 ![Create Action](images_readme/6.png)
-
+<br />
 Dentro de nuestro editor de código agregamos el siguiente JavaScript
 
 ```javascript
@@ -95,27 +93,26 @@ function main(params) {
   });
 }
 ```
-
-
+<br />
+<br />
 ![Save Action](images_readme/7.PNG)
-
-
+<br />
 * Set Parameters
-
+<br />
 Ahora debemos agregar los parámetros que tenemos en nuestro código los cuales obtendremos del servicio Watson Discovery. Para esto:
 
 //OBTENER PARAMETROS DE DISCOVERY IMG
-
+<br />
 Con los parámetros, volvemos a nuestra acción y accedemos a la sección parameters
-
+<br />
 ![Parameters](images_readme/8.PNG)
-
-
+<br />
 Agregaremos los parámetros que se muestran a continuación sustituyendo el *Parameter Value* por los datos obtenidos del servicio discovery
-
+<br />
 ![Set parameters](images_readme/9.PNG)
-
+<br />
 A continuación accederemos a la sección Endpoints para habilitar el acceso a neustra acción a través de HTTP. 
+<br />
 *Nota: el servicio de IBM Cloud Functions brinda el acceso utilizando autenticación, a efectos prácticos para este caso no utilizaremos la autenticación*
 
 ![Enable as Web Action](images_readme/10.PNG)
