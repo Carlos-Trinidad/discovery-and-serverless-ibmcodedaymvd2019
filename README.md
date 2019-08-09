@@ -26,7 +26,7 @@ Serverless es contar con poder de computo (servidores) como utilidad, lo cual me
 
 * Create Action
 
-![Create action](images_readme/3.PNG)
+![Create action](images_readme/3.png)
 
 # Acción N° 1 - SearchByText
 
@@ -35,7 +35,11 @@ Primero, crearemos un paquete donde guardaremos todas nuestras acciones.
 
 *Package Name: serverless-codeDay (opcional)*
 
-![Create Package](images_readme/4.PNG)
+![Create Package](images_readme/4.png)
+![Colocamos el nombre](images_readme/5.png)
+
 
 Pondremos el nombre - searchByText
+
+![Create Action](images_readme/6.png)
 
