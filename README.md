@@ -133,7 +133,7 @@ Realizado esto, accediendo a la sección Acciones deberíamos tener nuestro *pac
 
 <br />
 
-# Acción N° 2 - SearchByText
+# Acción N° 2 - NewsTopStories
 
 Para crear nuestra nueva acción daremos click en Create en la sección Acciones
 
@@ -193,13 +193,18 @@ function main(params) {
 ```
 
 <br />
+
 Agregaremos los parámetros que se muestran a continuación sustituyendo el *Parameter Value* por los datos obtenidos del servicio discovery
+
 <br />
+
 *Nota: para el caso del collection_id, nótese que utilizamos news-en. Esta colección nos brinda la posibilidad de buscar en un dominio de noticias en inglés. Se utiliza este debido a que es el más acutalizado (aproximadamente 300.000 noticias diarias). Para buscar en español debemos modificar el value a news-es*
 
 ![Set parameters](images_readme/13.PNG)
 <br />
+
 A continuación accederemos a la sección Endpoints para habilitar el acceso a neustra acción a través de HTTP. 
+
 <br />
 
 Damos click en *Save* para que el cambio se ejecute
