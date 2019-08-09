@@ -96,11 +96,11 @@ function main(params) {
 }
 ```
 
-* Save
 
 ![Save Action](images_readme/7.PNG)
 
 
+* Set Parameters
 
 Ahora debemos agregar los parámetros que tenemos en nuestro código los cuales obtendremos del servicio Watson Discovery. Para esto:
 
@@ -115,3 +115,9 @@ Agregaremos los parámetros que se muestran a continuación sustituyendo el *Par
 
 ![Set parameters](images_readme/9.PNG)
 
+A continuación accederemos a la sección Endpoints para habilitar el acceso a neustra acción a través de HTTP. 
+*Nota: el servicio de IBM Cloud Functions brinda el acceso utilizando autenticación, a efectos prácticos para este caso no utilizaremos la autenticación*
+
+![Enable as Web Action](images_readme/10.PNG)
+
+Damos click en *Save* para que el cambio se ejecute
