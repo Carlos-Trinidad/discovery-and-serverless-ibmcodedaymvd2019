@@ -24,6 +24,7 @@ Serverless es contar con poder de computo (servidores) como utilidad, lo cual me
 
 * Create Action
 <br />
+
 ![Create action](images_readme/3.PNG)
 <br />
 # Acción N° 1 - SearchByText
@@ -33,12 +34,14 @@ Primero, crearemos un paquete donde guardaremos todas nuestras acciones.
 
 *Package Name: serverless-codeDay (opcional)*
 <br />
+
 ![Create Package](images_readme/4.PNG)
 ![Colocamos el nombre](images_readme/5.png)
 <br />
 <br />
 Pondremos el nombre - searchByText
 <br />
+
 ![Create Action](images_readme/6.png)
 <br />
 Dentro de nuestro editor de código agregamos el siguiente JavaScript
@@ -129,6 +132,7 @@ Realizado esto, accediendo a la sección Acciones deberíamos tener nuestro *pac
 ![See package and action](images_readme/11.PNG)
 
 <br />
+
 # Acción N° 2 - SearchByText
 
 Para crear nuestra nueva acción daremos click en Create en la sección Acciones
