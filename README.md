@@ -95,9 +95,13 @@ function main(params) {
 ```
 <br />
 <br />
+
 ![Save Action](images_readme/7.PNG)
+
 <br />
+
 * Set Parameters
+
 <br />
 Ahora debemos agregar los parámetros que tenemos en nuestro código los cuales obtendremos del servicio Watson Discovery. Para esto:
 
@@ -105,10 +109,12 @@ Ahora debemos agregar los parámetros que tenemos en nuestro código los cuales 
 <br />
 Con los parámetros, volvemos a nuestra acción y accedemos a la sección parameters
 <br />
+
 ![Parameters](images_readme/8.PNG)
 <br />
 Agregaremos los parámetros que se muestran a continuación sustituyendo el *Parameter Value* por los datos obtenidos del servicio discovery
 <br />
+
 ![Set parameters](images_readme/9.PNG)
 <br />
 A continuación accederemos a la sección Endpoints para habilitar el acceso a neustra acción a través de HTTP. 
@@ -118,3 +124,13 @@ A continuación accederemos a la sección Endpoints para habilitar el acceso a n
 ![Enable as Web Action](images_readme/10.PNG)
 
 Damos click en *Save* para que el cambio se ejecute
+Realizado esto, accediendo a la sección Acciones deberíamos tener nuestro *package* con la acción creada
+
+![See package and action](images_readme/11.PNG)
+
+<br />
+# Acción N° 2 - SearchByText
+
+Para crear nuestra nueva acción daremos click en Create en la sección Acciones
+
+![Create Action](images_readme/12.PNG)
