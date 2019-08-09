@@ -138,3 +138,68 @@ Realizado esto, accediendo a la sección Acciones deberíamos tener nuestro *pac
 Para crear nuestra nueva acción daremos click en Create en la sección Acciones
 
 ![Create Action](images_readme/12.PNG)
+
+<br />
+Pondremos el nombre - news-discovery
+<br />
+
+```javascript
+const assert = require('assert');
+const DiscoveryV1 = require('ibm-watson/discovery/v1');
+
+/**
+  *
+  * main() will be run when you invoke this action
+  *
+  * @param Cloud Functions actions accept a single parameter, which must be a JSON object.
+  *
+  * @return The output of this action, which must be a JSON object.
+  *
+  */
+function main(params) {
+  return new Promise(function (resolve, reject) {
+
+    let discovery;
+
+    if (params.iam_apikey){
+      discovery = new DiscoveryV1({
+        'iam_apikey': params.iam_apikey,
+        'url': params.url,
+        'version': '2019-03-25'
+      });
+    }
+    else {
+      discovery = new DiscoveryV1({
+        'username': params.username,
+        'password': params.password,
+        'url': params.url,
+        'version': '2019-03-25'
+      });
+    }
+
+    discovery.query({
+      'environment_id': params.environment_id,
+      'collection_id': params.collection_id,
+      'natural_language_query': params.user_input,
+
+    }, function(err, data) {
+      if (err) {
+        return reject(err);
+      }
+      return resolve(data);
+    });
+  });
+}
+```
+
+<br />
+Agregaremos los parámetros que se muestran a continuación sustituyendo el *Parameter Value* por los datos obtenidos del servicio discovery
+<br />
+*Nota: para el caso del collection_id, nótese que utilizamos news-en. Esta colección nos brinda la posibilidad de buscar en un dominio de noticias en inglés. Se utiliza este debido a que es el más acutalizado (aproximadamente 300.000 noticias diarias). Para buscar en español debemos modificar el value a news-es*
+
+![Set parameters](images_readme/13.PNG)
+<br />
+A continuación accederemos a la sección Endpoints para habilitar el acceso a neustra acción a través de HTTP. 
+<br />
+
+Damos click en *Save* para que el cambio se ejecute
