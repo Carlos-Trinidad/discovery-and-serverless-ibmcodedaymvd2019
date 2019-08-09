@@ -45,7 +45,7 @@ Pondremos el nombre - searchByText
 
 Dentro de nuestro editor de código agregamos el siguiente JavaScript
 
-```
+```javascript
 
 const assert = require('assert');
 const DiscoveryV1 = require('ibm-watson/discovery/v1');
