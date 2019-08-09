@@ -12,4 +12,12 @@ Serverless es contar con poder de computo (servidores) como utilidad, lo cual me
 ### Ingreso en IBM Cloud
 * Buscamos en el catálogo Functions
 
-[! IBM Cloud Functions](images_readme/1.png)
+![IBM Cloud Functions](images_readme/1.png)
+
+* Damos click en Empezar a crear
+
+![Empezar a crear](images_readme/2.png)
+
+* Create Action
+
+![Create action](images_readme/3.png)
