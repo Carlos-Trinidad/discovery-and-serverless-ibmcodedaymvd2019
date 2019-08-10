@@ -5,19 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="custom.js"></script>
     <title>Serverless-Browser</title>
 </head>
 
 <body>
-    <div id="watson_div"><img src="./images/watson_logo.png" id="watson"></div>
-    <input type="text" id="search_bar">
-    <div id="button_div">
-        <button id="by_text" onclick="searchByText()">Buscar por texto</button>
-        <button id="top_stories" onclick="searchTopStories()">Top stories</button>
-        <button id="sentiment">Sentimientos</button>
-        <button id="co_mention">Co-mencion</button>
+    <div id="page_1">
+        <div id="watson_div"><img src="./images/watson_logo.png" id="watson"></div>
+        <input type="text" id="search_bar">
+        <div id="button_div">
+            <button id="by_text" onclick="searchByText()" class=search_button>Buscar por texto</button>
+            <button id="top_stories" onclick="searchTopStories()" class=search_button>Top stories</button>
+            <button id="sentiment" class=search_button>Sentimientos</button>
+            <button id="co_mention" class=search_button>Co-mencion</button>
+        </div>
+    </div>
+    <div id="response_page">
+        <div id="response_container"></div>
+        <button id="search_again">&#8593;</button>
     </div>
 </body>
 

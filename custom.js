@@ -6,7 +6,7 @@ function searchByText(){
     Http.send();
 
     Http.onreadystatechange = (e) => {
-    console.log(Http.responseText)
+        $( '#response_container').text(Http.responseText)
     }
 }
 
@@ -18,6 +18,23 @@ function searchTopStories(){
     Http.send();
 
     Http.onreadystatechange = (e) => {
-    console.log(Http.responseText)
+        $( '#response_page').text(Http.responseText)
     }
 }
+$(document).ready(function () {
+    $( ".search_button" ).click(function() {
+        $( '#page_1' ).css('top','-100%')
+        $( '#page_1' ).css('transform','translateY(-100%)')
+        $( '#page_1' ).css('transition-duration','1.5s')
+        $( '#response_page' ).css('transform','translateY(-100%)')
+        $( '#response_page' ).css('transition-duration','1.5s')
+    });
+    $( "#search_again" ).click(function() {
+        $( '#page_1' ).css('top','0%')
+        $( '#page_1' ).css('transform','translateY(0%)')
+        $( '#page_1' ).css('transition-duration','1.5s')
+        $( '#response_page' ).css('transform','translateY(0%)')
+        $( '#response_page' ).css('transition-duration','1.5s')
+    });
+});
+

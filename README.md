@@ -208,3 +208,4 @@ A continuación accederemos a la sección Endpoints para habilitar el acceso a n
 <br />
 
 Damos click en *Save* para que el cambio se ejecute
+

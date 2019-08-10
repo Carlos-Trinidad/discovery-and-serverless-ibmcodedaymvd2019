@@ -1,14 +1,22 @@
 html, body{
     height: 100%;
     overflow: hidden;
-    background: rgb(224, 224, 236)
+    background: rgb(211, 211, 235)
 }
+
+#page_1{
+    height: 100%;
+    width: 100%;
+}
+
 #watson_div{
     position: absolute;
     top: 10%;
     left: 42.5%;
     height: 30%;
     width: 15%;
+    background: white;
+    border-radius: 50%;
 }
 img{
     width: 100%;
@@ -45,4 +53,32 @@ button{
     left: 15%;
     height: 8%;
     width: 70%;
+}
+
+#response_page{
+    height: 100%;
+    width: 100%;
+    background: rgb(211, 211, 235)
+}
+
+#response_container{
+    position: relative;
+    height: 70%;
+    width: 80%;
+    top: 5%;
+    left: 10%;
+    background: white;
+    border-radius: 25px;
+    padding: 2%;
+    overflow-y: scroll;
+}
+
+#search_again{
+    position: relative;
+    margin-top: 7% !important;
+    left: 48% !important;
+    width: 4% !important;
+    height: 8% !important;
+    border-radius: 50%;
+    font-size: 200%;
 }
