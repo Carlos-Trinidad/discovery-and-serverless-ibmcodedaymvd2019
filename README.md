@@ -278,7 +278,7 @@ Agregaremos los mismos parámetros que incorporamos anteriormente
 
 <br />
 
-![Set parameters](images_readme/9.PNG)
+![Set parameters](images_readme/13.PNG)
 <br />
 
 A continuación accederemos a la sección Endpoints para habilitar el acceso a neustra acción a través de HTTP. 
@@ -357,7 +357,7 @@ Agregaremos los mismos parámetros que incorporamos anteriormente
 
 <br />
 
-![Set parameters](images_readme/9.PNG)
+![Set parameters](images_readme/13.PNG)
 <br />
 
 A continuación accederemos a la sección Endpoints para habilitar el acceso a neustra acción a través de HTTP. 
