@@ -318,4 +318,4 @@ ibmcloud cf push
 
 Cuando finalice el proceso de deploy deberíamos tener acceso a nuestra aplicación en una url similar a la siguiente:
 
-[http://my_nombre_unico-grouchy-crocodile.mybluemix.net](http://my_nombre_unico-grouchy-crocodile.mybluemix.net)
+[http://my_nombre_unico-grouchy-crocodile.mybluemix.net](http://serverlessdiscovery-grouchy-crocodile.mybluemix.net)
