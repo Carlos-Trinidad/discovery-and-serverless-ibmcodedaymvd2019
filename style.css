@@ -37,7 +37,7 @@ input{
 
 button{
     height: 100%;
-    width: 23%;
+    width: 31.3%;
     float: left;
     background-color: cadetblue; 
     border-radius: 12px;
@@ -81,4 +81,8 @@ button{
     height: 8% !important;
     border-radius: 50%;
     font-size: 200%;
+}
+
+p{
+    display: inline-block;
 }
