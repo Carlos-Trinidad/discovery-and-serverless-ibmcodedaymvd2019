@@ -43,7 +43,7 @@ Watson Discovery es una herramienta que nos permite agregar un motor de busqueda
 <br />
 
 ### Tool de Watson Discovery
-* Una vez aquí ya podemos comenzar a trabajar con la herramienta de Discovery y a cargar nuestros datos. A continuación haremos click en "Upload your own data".
+* Una vez aquí ya podemos comenzar a trabajar con la herramienta de Discovery y cargar nuestros datos. A continuación haremos click en "Upload your own data".
 
 ![Tool IBM Watson Discovery Upload Data](images_readme/discovery/7.png)
 <br />
@@ -62,7 +62,7 @@ Watson Discovery es una herramienta que nos permite agregar un motor de busqueda
 <br />
 
 ### Subiendo nuestros documentos a Discovery
-* Una vez creada nuestra colección comenzaremos a subir nuestros Documentos a Discovery. Para esto haremos click en "select documents" o arrastraremos y soltaremos los documentos. Los documentos de prueba que usaremos se encuentran en la carpeta ./documents de este repositorio.
+* Una vez creada nuestra colección comenzaremos a subir nuestros Documentos a Discovery. Para esto haremos click en "select documents" o arrastraremos y soltaremos los documentos. Los documentos de prueba que usaremos se encuentran en la carpeta (./documents) de este repositorio.
 
 ![Upload Documents Select Documents](images_readme/discovery/10.png)
 <br />
@@ -72,13 +72,13 @@ Watson Discovery es una herramienta que nos permite agregar un motor de busqueda
 <br />
 <br />
 
-* Una vez seleccionados los documentos, estos se comenzarán a indexar en la herramienta de Discovery. Por lo cual tendremos que esperar unos segundos hasta que los 4 documentos queden listos.
+* Una vez seleccionados los documentos, estos se comenzarán a indexar en la herramienta de Discovery. Por lo cual tendremos que esperar unos segundos hasta que los cuatro documentos queden listos.
 
 ![Upload Documents Esperar Indexado](images_readme/discovery/12.png)
 <br />
 <br />
 
-* Cuando los documentos queden listos e indexados correctamente. Podremos ver un dashboard con ejemplos de los enriquecimientos y analisis que Discovery ha detectado en el texto.
+* Cuando los documentos queden listos e indexados correctamente. Podremos ver un dashboard con ejemplos de los enriquecimientos y análisis que Discovery ha detectado en el texto.
 
 ![Upload Documents Dashboard](images_readme/discovery/13.png)
 <br />
