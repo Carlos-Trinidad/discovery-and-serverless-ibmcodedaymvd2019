@@ -278,7 +278,7 @@ Agregaremos los mismos parámetros que incorporamos anteriormente
 
 <br />
 
-![Set parameters](images_readme/13.PNG)
+![Set parameters](images_readme/9.PNG)
 <br />
 
 A continuación accederemos a la sección Endpoints para habilitar el acceso a neustra acción a través de HTTP. 
@@ -288,3 +288,34 @@ A continuación accederemos a la sección Endpoints para habilitar el acceso a n
 Damos click en *Save* para que el cambio se ejecute
 
 
+#Deploy a IBM Cloud de nuestra app
+
+En este paso, realizaremos el deploy de nuestra aplicacion a IBM Cloud como una cloud foundry.
+Para realizar esto, editaremos en primer lugar el archivo manifest.yml que aparece en el repo que clonamos anteriormente.
+Debemos modificar la línea name que aparece en el .yml por un nombre unico que elijamos
+<br />
+
+```yml
+---
+  applications:
+  - name: my_nombre_unico
+    random-route: true
+    memory: 128M
+    buildpack: https://github.com/cloudfoundry/staticfile-buildpack
+```
+
+<br />
+
+Con eto pronto, desde línea de comandos, posicionados en el directorio donde clonamos el repositorio, ejecutamos los siguientes comandos:
+
+```bash
+
+ibmcloud login #Si es un usuario federado (@..ibm.com) usar ibmcloud login --sso
+ibmcloud cf push
+
+```
+<br />
+
+Con esto realizado deberíamos tener acceso a nuestra aplicación en una url similar a la siguiente:
+
+[Link a app](http://my_nombre_unico-grouchy-crocodile.mybluemix.net)
