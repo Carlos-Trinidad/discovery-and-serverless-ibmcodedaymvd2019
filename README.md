@@ -306,7 +306,7 @@ Debemos modificar la línea name que aparece en el .yml por un nombre unico que 
 
 <br />
 
-Con eto pronto, desde línea de comandos, posicionados en el directorio donde clonamos el repositorio, ejecutamos los siguientes comandos:
+Con esto pronto, desde línea de comandos, posicionados en el directorio donde clonamos el repositorio, ejecutamos los siguientes comandos:
 
 ```bash
 
@@ -316,6 +316,6 @@ ibmcloud cf push
 ```
 <br />
 
-Con esto realizado deberíamos tener acceso a nuestra aplicación en una url similar a la siguiente:
+Cuando finalice el proceso de deploy deberíamos tener acceso a nuestra aplicación en una url similar a la siguiente:
 
-[Link a app](http://my_nombre_unico-grouchy-crocodile.mybluemix.net)
+[http://my_nombre_unico-grouchy-crocodile.mybluemix.net](http://my_nombre_unico-grouchy-crocodile.mybluemix.net)
