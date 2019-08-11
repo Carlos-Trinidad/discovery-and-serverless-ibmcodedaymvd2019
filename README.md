@@ -288,6 +288,85 @@ A continuación accederemos a la sección Endpoints para habilitar el acceso a n
 Damos click en *Save* para que el cambio se ejecute
 
 
+# Acción N° 4 -  coMention
+
+Para crear nuestra nueva acción daremos click en Create en la sección Acciones
+
+![Create Action](images_readme/12.PNG)
+
+<br />
+Pondremos el nombre - coMention y guardaremos la función en el paquete creado anteriormente
+<br />
+
+<br />
+
+*Nota: Nótese que la acción que creamos es similar a las anteriores pero agregamos modificamos la respuesta del servicio de discovery*
+
+```javascript
+const assert = require('assert');
+const DiscoveryV1 = require('ibm-watson/discovery/v1');
+
+/**
+  *
+  * main() will be run when you invoke this action
+  *
+  * @param Cloud Functions actions accept a single parameter, which must be a JSON object.
+  *
+  * @return The output of this action, which must be a JSON object.
+  *
+  */
+function main(params) {
+  return new Promise(function (resolve, reject) {
+
+    let discovery;
+
+    if (params.iam_apikey){
+      discovery = new DiscoveryV1({
+        'iam_apikey': params.iam_apikey,
+        'url': params.url,
+        'version': '2019-03-25'
+      });
+    }
+    else {
+      discovery = new DiscoveryV1({
+        'username': params.username,
+        'password': params.password,
+        'url': params.url,
+        'version': '2019-03-25'
+      });
+    }
+
+    discovery.query({
+      'environment_id': params.environment_id,
+      'collection_id': params.collection_id,
+      'natural_language_query': params.user_input,
+
+    }, function(err, data) {
+      if (err) {
+        return reject(err);
+      }
+      return resolve(data);
+    });
+  });
+}
+```
+
+<br />
+
+Agregaremos los mismos parámetros que incorporamos anteriormente
+
+<br />
+
+![Set parameters](images_readme/9.PNG)
+<br />
+
+A continuación accederemos a la sección Endpoints para habilitar el acceso a neustra acción a través de HTTP. 
+
+<br />
+
+Damos click en *Save* para que el cambio se ejecute
+
+
 #Deploy a IBM Cloud de nuestra app
 
 En este paso, realizaremos el deploy de nuestra aplicacion a IBM Cloud como una cloud foundry.
