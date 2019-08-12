@@ -84,6 +84,170 @@ Watson Discovery es una herramienta que nos permite agregar un motor de busqueda
 <br />
 <br />
 
+## Explorando nuestros documentos
+
+* Ahora que indexamos nuestros documentos a Discovery, podemos probar y ver que resultados nos esta devolviendo. Para esto nos dirigiremos a la opción "Build Queries"
+
+![Ver datos Discovery Seleccionar Queries](images_readme/discovery/14.png)
+<br />
+<br />
+
+* Una vez aquí podemos comenzar a buscar sobre nuestros documentos, por ahora la forma más facil es ir a la opción "Search for Documents" y escribir nuestra consulta en lenguaje natural. Los documentos que indexamos tratan sobre computación en la nube, así que podemos preguntar cosas relacionadas a esa tematica.
+
+![Ver datos Discovery Realizar una Consulta](images_readme/discovery/15.png)
+<br />
+<br />
+
+* La consulta de ejemplo que utilice fue "Cuales son los beneficios de la computación en la nube?", una vez escrita damos click al boton "Run Query".
+
+![Ver Datos Discovery Run Query Passages](images_readme/discovery/16.png)
+<br />
+<br />
+
+* Lo primero que encontraremos que nos devuelve la herramienta son los Passages. Los Passages son fragmentos de texto que Discovery extrae de los distintos documentos indexados, estos fragmentos de texto tienen una alta probabilidad de contestar directamente la consulta ingresada.
+
+![Ver Datos Discovery Run Query Results](images_readme/discovery/17.png)
+<br />
+<br />
+
+* Lo segundo que encontramos son los Results. Los Results son los son los documentos que tienen mayor Score para contestar la consulta ingresada. 
+
+![Ver Datos Discovery Run Query Results](images_readme/discovery/18.png)
+<br />
+<br />
+
+* Por ultimo tenemos una opción que nos permite visualizar el JSON de los datos. Este sería el JSON que obtendríamos en nuestra aplicación luego de hacer una llamada a la API de Discovery.
+
+![Ver Datos Discovery Run Query Results](images_readme/discovery/19.png)
+<br />
+<br />
+
+## Entrenando a Discovery con SDU
+
+Smart Document Understanding (SDU) es una nueva forma de entrenar a IBM Watson Discovery para extraer campos personalizados en nuestros documentos. Personalizar cómo se indexan los documentos en Discovery mejorará las respuestas devueltas por nuestra aplicación.
+
+Con SDU, podemos anotar campos dentro de los documentos para entrenar modelos de conversión personalizados. A medida que anotamos, Watson está aprendiendo y comenzará a predecir anotaciones.
+
+* Para comenzar a entrenar a Discovery nos dirigiremos a la opción "Configure Data" de nuestro Dashboard de Discovery.
+
+![SDU Discovery Configure Data Click](images_readme/discovery/20.png)
+<br />
+<br />
+
+* Una vez aquí veremos como Watson Discovery ha detectado el formato de nuestros documentos y el texto que hay en el mismo. Ahora nosotros comenzaremos a "etiquetar" o "anotar" propiedades del texto, ya sean el Titulo (title), Pie de página (footer), Encabezado (header), Autor (author), Subtitulos (subtitle) y Texto normal (text).
+
+![SDU Discovery Data Annotation](images_readme/discovery/21.png)
+<br />
+<br />
+
+* La forma más facil de anotar es hacer uso de la interfaz gráfica que te brinda. Primero lo mejor es hacer uso del "Single Page View"
+
+![SDU Discovery Single Page View](images_readme/discovery/22.png)
+<br />
+<br />
+
+* Ahora con esta "Vista" comenzaremos a "anotar" o "pintar" nuestro texto con las propiedades correspondientes. En este caso queda a total libertad de cada uno pintar los documentos cómo más crean que corresponda! Solo un consejo: Pinten al menos un buen par de Titulos o Subtitulos en cada documento para así la siguiente parte salgan buenos resultados. No se olviden a dar click en el botón "Submit Page" luego de haber finalizado de pintar cada pagina!
+
+![SDU Discovery Pintar Documentos](images_readme/discovery/23.png)
+<br />
+<br />
+
+* Una vez que ya hayamos "pitado"/"anotado" varias páginas de todos nuestros documentos, procederemos a la siguiente parte de configuración de SDU: "Manage Fields"
+
+![SDU Discovery Manage Fields Click](images_readme/discovery/24.png)
+<br />
+<br />
+
+En esta sección de "Manage Fields" tenemos dos posibilidades:
+
+* Eliminar que propiedades indexar a Discovery.
+* "Split" o "Segmentar" los documentos a través de una propiedad.
+
+La primera nos permite elegir en base a las propiedades que conocemos ahora, cual NO indexar al momento de subir documentos nuevos a Discovery. Esto sirve por ejemplo cuando tenemos datos que no queres devolver al usuario ya que no le aportan valor a él ni a la busqueda en sí misma.
+
+* En este caso para el ejemplo vamos a NO indexar las propiedades "footer" y "header".
+
+![SDU Discovery Manage Fields Footer/Header](images_readme/discovery/25.png)
+<br />
+<br />
+
+La segunda posibilidad que nos permite elegir es la opción de "split documents". Esta opción es la razón por la cual podemos mejorar nuestros resultados de Discovery gracias a SDU. 
+A través de esta opción podemos seleccionar una propiedad para "segmentar" los documentos. Una vez "segmentado" cada segmento es un nuevo documento que sera enriquecido, indexado y devuelto separado tal cual cómo si fuera cualquier otro documento que le ingestamos a Discovery.
+
+Esto es util por ejemplo cuando tenemos un gran documento de 50 páginas, lo segmentamos en base a X propiedad y luego al usuario le llega el "segmento" o documento que contiene la respuesta a su consulta.
+
+* En este caso segmentaremos en base a Subtitulos.
+
+![SDU Discovery Manage Fields Split Documents](images_readme/discovery/25.png)
+<br />
+<br />
+
+Por ultimo tenemos la opción de "Enrich Fields". Esta opción nos permite agregar más propiedades de enriquecimiento de texto a cada propiedad que hemos identificado.
+
+* Para este caso de ejemplo, lo voy a dejar default.
+
+![SDU Discovery Enrich Fields](images_readme/discovery/26.png)
+<br />
+<br />
+
+* Por ultimo daremos click en "Apply changes to collection". Esto hará que se aplique el nuevo modelo y configuración que hemos elegido a nuestra colección de Discovery.
+
+![SDU Discovery Apply Changes Click](images_readme/discovery/27.png)
+<br />
+<br />
+
+* Ahora veremos que nuevamente nos pide que subamos documentos. Esto sucede ya que ahora acabamos de aplicar un nuevo modelo de Machine Learning a nuestra colección y necesitamos actualizar los documentos que ya existen indexandolos de nuevo.
+
+![SDU Discovery Indexar Documentos 1](images_readme/discovery/28.png)
+<br />
+<br />
+
+![SDU Discovery Indexar Documentos 2](images_readme/discovery/29.png)
+<br />
+<br />
+
+Ahora los documentos comenzarán a indexarse de nuevo con la nueva configuración del modelo que creamos. Esto puede demorar unos segundos. 
+Recomendamos que si no visualizan los nuevos datos en el dashboard refresquen la página.
+
+![SDU Discovery Indexar Documentos 2](images_readme/discovery/30.png)
+<br />
+<br />
+
+Y listo! Ya tenemos nuestros documentos indexados con el nuevo modelo.
+En mi caso se crearon 51 documentos y también tengo 51 warnings. Estas warnings fueron porque yo no entrene a mi modelo para que detectará footers, entonces como no los reconoce no los puede eliminar.
+
+![SDU Discovery Dashboard Nuevo Modelo](images_readme/discovery/31.png)
+<br />
+<br />
+
+![SDU Discovery Dashboard Warnings](images_readme/discovery/32.png)
+<br />
+<br />
+
+Ahora podemos volver a la pestaña de "Build Queries" y probar nuevamente nuestra consulta en lenguaje natural que habiamos hecho con antelación. 
+En mi caso vemos que devuelve muchos más resultados y vemos una nueva propiedad en el JSON de resultados, el cual es la propiedad "Subtitle".
+
+![SDU Discovery Build Queries Nuevo Modelo](images_readme/discovery/33.png)
+<br />
+<br />
+
+Ahora es momento de utilizar esta colección en nuestra aplicación cognitiva y en nuestras funciones serverless!
+
+Necesitaremos guardar y copiar unas credenciales para sumarlas con las que habiamos guardado antes (API KEY y URL).
+
+* Para esto volveremos a nuestro Dashboard de la colección y haremos click en el botón "API" justo al lado de "Configure Data".
+
+![SDU Discovery Click Button API](images_readme/discovery/34.png)
+<br />
+<br />
+
+* Una vez hecho esto, nos copiaremos y guardaremos los valores de "Environment ID" y "Collection ID", estos serán usados más adelante.
+
+![SDU Discovery Copy Environment and Collection](images_readme/discovery/34.png)
+<br />
+<br />
+
+
 ## IBM Cloud Functions
 
 Serverless es contar con poder de computo (servidores) como utilidad, lo cual me permite  escalar  automáticamente, y donde además, pago lo que uso.
