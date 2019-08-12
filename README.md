@@ -84,7 +84,7 @@ Watson Discovery es una herramienta que nos permite agregar un motor de busqueda
 <br />
 <br />
 
-## Explorando nuestros documentos
+### Explorando nuestros documentos
 
 * Ahora que indexamos nuestros documentos a Discovery, podemos probar y ver que resultados nos esta devolviendo. Para esto nos dirigiremos a la opción "Build Queries"
 
@@ -110,7 +110,7 @@ Watson Discovery es una herramienta que nos permite agregar un motor de busqueda
 <br />
 <br />
 
-* Lo segundo que encontramos son los Results. Los Results son los son los documentos que tienen mayor Score para contestar la consulta ingresada. 
+* Lo segundo que encontramos son los Results. Los Results son los son los documentos que tienen mayor probabilidad de contener la información para contestar la consulta ingresada. 
 
 ![Ver Datos Discovery Run Query Results](images_readme/discovery/18.png)
 <br />
@@ -122,7 +122,7 @@ Watson Discovery es una herramienta que nos permite agregar un motor de busqueda
 <br />
 <br />
 
-## Entrenando a Discovery con SDU
+### Entrenando a Discovery con SDU
 
 Smart Document Understanding (SDU) es una nueva forma de entrenar a IBM Watson Discovery para extraer campos personalizados en nuestros documentos. Personalizar cómo se indexan los documentos en Discovery mejorará las respuestas devueltas por nuestra aplicación.
 
@@ -163,7 +163,7 @@ En esta sección de "Manage Fields" tenemos dos posibilidades:
 * Eliminar que propiedades indexar a Discovery.
 * "Split" o "Segmentar" los documentos a través de una propiedad.
 
-La primera nos permite elegir en base a las propiedades que conocemos ahora, cual NO indexar al momento de subir documentos nuevos a Discovery. Esto sirve por ejemplo cuando tenemos datos que no queres devolver al usuario ya que no le aportan valor a él ni a la busqueda en sí misma.
+La primera nos permite elegir en base a las propiedades que conocemos ahora, cual NO indexar al momento de subir documentos nuevos a Discovery. Esto sirve por ejemplo cuando tenemos datos que no queremos devolver al usuario ya que no le aportan valor a él ni a la busqueda en sí misma.
 
 * En este caso para el ejemplo vamos a NO indexar las propiedades "footer" y "header".
 
@@ -178,7 +178,7 @@ Esto es util por ejemplo cuando tenemos un gran documento de 50 páginas, lo seg
 
 * En este caso segmentaremos en base a Subtitulos.
 
-![SDU Discovery Manage Fields Split Documents](images_readme/discovery/25.png)
+![SDU Discovery Manage Fields Split Documents](images_readme/discovery/26.png)
 <br />
 <br />
 
@@ -186,48 +186,48 @@ Por ultimo tenemos la opción de "Enrich Fields". Esta opción nos permite agreg
 
 * Para este caso de ejemplo, lo voy a dejar default.
 
-![SDU Discovery Enrich Fields](images_readme/discovery/26.png)
+![SDU Discovery Enrich Fields](images_readme/discovery/27.png)
 <br />
 <br />
 
 * Por ultimo daremos click en "Apply changes to collection". Esto hará que se aplique el nuevo modelo y configuración que hemos elegido a nuestra colección de Discovery.
 
-![SDU Discovery Apply Changes Click](images_readme/discovery/27.png)
+![SDU Discovery Apply Changes Click](images_readme/discovery/28.png)
 <br />
 <br />
 
 * Ahora veremos que nuevamente nos pide que subamos documentos. Esto sucede ya que ahora acabamos de aplicar un nuevo modelo de Machine Learning a nuestra colección y necesitamos actualizar los documentos que ya existen indexandolos de nuevo.
 
-![SDU Discovery Indexar Documentos 1](images_readme/discovery/28.png)
+![SDU Discovery Indexar Documentos 1](images_readme/discovery/29.png)
 <br />
 <br />
 
-![SDU Discovery Indexar Documentos 2](images_readme/discovery/29.png)
+![SDU Discovery Indexar Documentos 2](images_readme/discovery/30.png)
 <br />
 <br />
 
 Ahora los documentos comenzarán a indexarse de nuevo con la nueva configuración del modelo que creamos. Esto puede demorar unos segundos. 
 Recomendamos que si no visualizan los nuevos datos en el dashboard refresquen la página.
 
-![SDU Discovery Indexar Documentos 2](images_readme/discovery/30.png)
+![SDU Discovery Indexar Documentos 2](images_readme/discovery/31.png)
 <br />
 <br />
 
 Y listo! Ya tenemos nuestros documentos indexados con el nuevo modelo.
 En mi caso se crearon 51 documentos y también tengo 51 warnings. Estas warnings fueron porque yo no entrene a mi modelo para que detectará footers, entonces como no los reconoce no los puede eliminar.
 
-![SDU Discovery Dashboard Nuevo Modelo](images_readme/discovery/31.png)
+![SDU Discovery Dashboard Nuevo Modelo](images_readme/discovery/32.png)
 <br />
 <br />
 
-![SDU Discovery Dashboard Warnings](images_readme/discovery/32.png)
+![SDU Discovery Dashboard Warnings](images_readme/discovery/33.png)
 <br />
 <br />
 
 Ahora podemos volver a la pestaña de "Build Queries" y probar nuevamente nuestra consulta en lenguaje natural que habiamos hecho con antelación. 
 En mi caso vemos que devuelve muchos más resultados y vemos una nueva propiedad en el JSON de resultados, el cual es la propiedad "Subtitle".
 
-![SDU Discovery Build Queries Nuevo Modelo](images_readme/discovery/33.png)
+![SDU Discovery Build Queries Nuevo Modelo](images_readme/discovery/34.png)
 <br />
 <br />
 
@@ -237,13 +237,13 @@ Necesitaremos guardar y copiar unas credenciales para sumarlas con las que habia
 
 * Para esto volveremos a nuestro Dashboard de la colección y haremos click en el botón "API" justo al lado de "Configure Data".
 
-![SDU Discovery Click Button API](images_readme/discovery/34.png)
+![SDU Discovery Click Button API](images_readme/discovery/35.png)
 <br />
 <br />
 
 * Una vez hecho esto, nos copiaremos y guardaremos los valores de "Environment ID" y "Collection ID", estos serán usados más adelante.
 
-![SDU Discovery Copy Environment and Collection](images_readme/discovery/34.png)
+![SDU Discovery Copy Environment and Collection](images_readme/discovery/36.png)
 <br />
 <br />
 
