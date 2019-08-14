@@ -538,7 +538,8 @@ Debemos modificar la línea name que aparece en el .yml por un nombre unico que 
   - name: my_nombre_unico
     random-route: true
     memory: 128M
-    buildpack: https://github.com/cloudfoundry/staticfile-buildpack
+    buildpacks: 
+      - https://github.com/cloudfoundry/staticfile-buildpack
 ```
 
 <br />
