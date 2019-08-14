@@ -10,71 +10,76 @@ function searchByText() {
 
     Http.onreadystatechange = function (e) {
         if (Http.readyState == 4) {
-            console.log(Http.responseText);
             $(".loader").fadeOut("slow");
 
             var json = JSON.parse(Http.responseText);
+            console.log(json.matching_results)
 
-            $('#response_container').append(
-                `
-                <div class="container">
-                    <div class="row">
-                        <div class="col" id="passages">
-                        </div>
-                        <div class="col" id="documentos">
+            if (!json.matching_results){
+                $('#response_container').text(`No se encontraron Resultados`)
+            }else{
+                $('#response_container').append(
+                    `
+                    <div class="container">
+                        <div class="row">
+                            <div class="col" id="passages">
+                            </div>
+                            <div class="col" id="documentos">
+                            </div>
                         </div>
                     </div>
-                </div>
-                `
-            )
-
-            json.passages.forEach(function (element) {
-
-                var passage_text = element.passage_text;
-                var passage_score = element.passage_score;
-
-                $('#passages').append(
                     `
+                )
+
+                json.passages.forEach(function (element) {
+
+                    var passage_text = element.passage_text;
+                    var passage_score = element.passage_score;
+
+                    $('#passages').append(
+                        `
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Passage
+                                </h5>
+                                <p class="card-text">
+                                    ${passage_text} 
+                                </p>
+                                <p>
+                                    Score: ${passage_score}
+                                </p>
+                            </div>
+                        </div>
+                        `
+                    )
+                })
+
+                json.results.forEach(function (element) {
+
+                    var document_text = element.text;
+                    var document_score = element.result_metadata.score;
+
+                    $('#documentos').append(
+                        `
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">
-                                Passage
+                                Document
                             </h5>
                             <p class="card-text">
-                                ${passage_text} 
+                                ${document_text}
                             </p>
                             <p>
-                                Score: ${passage_score}
+                                Score: ${document_score}
                             </p>
                         </div>
                     </div>
                     `
-                )
-            })
-
-            json.results.forEach(function (element) {
-
-                var document_text = element.text;
-                var document_score = element.result_metadata.score;
-
-                $('#documentos').append(
-                    `
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            Document
-                        </h5>
-                        <p class="card-text">
-                            ${document_text}
-                        </p>
-                        <p>
-                            Score: ${document_score}
-                        </p>
-                    </div>
-                </div>
-                `
-                )
-            });
+                    )
+                });
+        
+            }
         }
     }
 }
@@ -91,45 +96,49 @@ function searchTopStories() {
 
     Http.onreadystatechange = function (e) {
         if (Http.readyState == 4) {
-            console.log(Http.responseText);
             $(".loader").fadeOut("slow");
 
             var json = JSON.parse(Http.responseText);
+            console.log(json.matching_results)
+            if (!json.matching_results){
+                $('#response_container').text(`No se encontraron Resultados`)
+            }else{
+                json.results.forEach(function (element) {
 
-            json.results.forEach(function (element) {
-
-                var main_image_url = element.main_image_url;
-                var title = element.title;
-                var text = element.text;
-                var url = element.url;
-
-                $('#response_container').append(
-                    `
-                <div class="card">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <div class="card-body">
-                                <img src="${main_image_url}" class="card-img" alt="Imagen URL">
+                    var main_image_url = element.main_image_url;
+                    var title = element.title;
+                    var text = element.text;
+                    var url = element.url;
+    
+                    $('#response_container').append(
+                        `
+                    <div class="card">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <div class="card-body">
+                                    <img src="${main_image_url}" class="card-img" alt="Imagen URL">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    ${title}
-                                </h5>
-                                <p class="card-text">
-                                    ${text} 
-                                </p>
-                                <a href="${url}" target="_blank" class="card-link">
-                                    leer más
-                                </a>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        ${title}
+                                    </h5>
+                                    <p class="card-text">
+                                        ${text} 
+                                    </p>
+                                    <a href="${url}" target="_blank" class="card-link">
+                                        leer más
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                `
-                )
-            });
+                    `
+                    )
+                });
+            }
+
         }
     }
 }
