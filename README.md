@@ -152,7 +152,7 @@ Con SDU, podemos anotar campos dentro de los documentos para entrenar modelos de
 <br />
 <br />
 
-* Una vez que ya hayamos "pitado"/"anotado" varias páginas de todos nuestros documentos, procederemos a la siguiente parte de configuración de SDU: "Manage Fields"
+* Una vez que ya hayamos "pintado"/"anotado" varias páginas de todos nuestros documentos, procederemos a la siguiente parte de configuración de SDU: "Manage Fields"
 
 ![SDU Discovery Manage Fields Click](images_readme/discovery/24.png)
 <br />
